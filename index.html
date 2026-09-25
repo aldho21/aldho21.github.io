@@ -268,6 +268,11 @@
       border: 1px solid rgba(45,212,191,0.2);
       white-space: nowrap;
     }
+    .project-badge.security {
+      background: rgba(244,63,94,0.1);
+      color: #fb7185;
+      border-color: rgba(244,63,94,0.25);
+    }
     .project-desc {
       font-size: 0.875rem;
       color: #94a3b8;
@@ -284,6 +289,14 @@
       color: var(--muted);
       border: 1px solid var(--border);
     }
+    .project-link {
+      display: inline-block;
+      margin-top: 0.9rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent2);
+    }
+    .project-link:hover { color: var(--teal); }
 
     /* EXPERIENCE */
     #experience { background: var(--bg2); }
@@ -451,6 +464,14 @@
             <span class="tag">UGC Automation</span>
           </div>
         </div>
+        <div class="skill-card">
+          <div class="skill-card-title" data-i18n="skills.security">Security & Incident Response</div>
+          <div class="skill-tags">
+            <span class="tag">Log Forensics</span><span class="tag">iptables</span>
+            <span class="tag">journalctl</span><span class="tag">Incident Triage</span>
+            <span class="tag">Hardening</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -461,6 +482,24 @@
       <div class="section-label" data-i18n="projects.label">// what i've built</div>
       <h2 class="section-title" data-i18n="projects.title">Projects</h2>
       <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-name" data-i18n="p0.name">Proxmox Host Compromise — Incident Response</div>
+            <div class="project-badge security" data-i18n="badge.incident">Incident Response</div>
+          </div>
+          <p class="project-desc" data-i18n="p0.desc">
+            Investigated and remediated a live compromise on a production Proxmox virtualization host,
+            triggered by a routine cron error. Traced the chain from a malformed cron artifact to an
+            active cryptomining backdoor with C2 connectivity, pinpointed the root cause via log
+            forensics (brute-forced web management panel), and led containment, cleanup, and hardening.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Linux Forensics</span><span class="stack-tag">iptables</span>
+            <span class="stack-tag">journalctl</span><span class="stack-tag">Bash</span>
+            <span class="stack-tag">Proxmox</span>
+          </div>
+        </div>
 
         <div class="project-card">
           <div class="project-header">
@@ -616,6 +655,7 @@
           <li data-i18n="exp.b4">Managed MikroTik and Cisco network infrastructure including VLAN configuration, SNMP monitoring, and inter-VLAN routing.</li>
           <li data-i18n="exp.b5">Automated IT asset inventory processing for 886+ assets using Python and Excel, generating per-floor summary reports.</li>
           <li data-i18n="exp.b6">Set up WireGuard VPN on Oracle Cloud for secure remote access and self-hosted service routing.</li>
+          <li data-i18n="exp.b7">Identified and remediated a live host-level compromise on production virtualization infrastructure — traced root cause to a brute-forced management panel, removed persistence mechanisms, and rolled out hardening measures to prevent recurrence.</li>
         </ul>
       </div>
     </div>
@@ -667,6 +707,7 @@
         "skills.dev": "Development",
         "skills.ai": "AI & Automation",
         "skills.media": "Media & Content",
+        "skills.security": "Security & Incident Response",
         "projects.label": "// what i've built",
         "projects.title": "Projects",
         "badge.production": "Production",
@@ -676,6 +717,9 @@
         "badge.desktop": "Desktop App",
         "badge.side": "Side Project",
         "badge.trading": "Trading",
+        "badge.incident": "Incident Response",
+        "p0.name": "Proxmox Host Compromise — Incident Response",
+        "p0.desc": "Investigated and remediated a live compromise on a production Proxmox virtualization host, triggered by a routine cron error. Traced the chain from a malformed cron artifact to an active cryptomining backdoor with C2 connectivity, pinpointed the root cause via log forensics (brute-forced web management panel), and led containment, cleanup, and hardening.",
         "p1.name": "Printer Toner Monitoring",
         "p1.desc": "Enterprise printer supply monitoring via raw SNMP UDP (zero dependencies). Integrates with existing Prometheus + Grafana stack via SNMP Exporter. Auto-detects mono vs color printers across 20+ devices.",
         "p2.name": "Self-hosted Monitoring Stack",
@@ -701,6 +745,7 @@
         "exp.b4": "Managed MikroTik and Cisco network infrastructure including VLAN configuration, SNMP monitoring, and inter-VLAN routing.",
         "exp.b5": "Automated IT asset inventory processing for 886+ assets using Python and Excel, generating per-floor summary reports.",
         "exp.b6": "Set up WireGuard VPN on Oracle Cloud for secure remote access and self-hosted service routing.",
+        "exp.b7": "Identified and remediated a live host-level compromise on production virtualization infrastructure — traced root cause to a brute-forced management panel, removed persistence mechanisms, and rolled out hardening measures to prevent recurrence.",
         "contact.label": "// reach out",
         "contact.title": "Contact",
         "contact.desc": "Open to new opportunities, collaborations, or just talking about infrastructure and automation.",
@@ -724,6 +769,7 @@
         "skills.dev": "Pengembangan",
         "skills.ai": "AI & Otomasi",
         "skills.media": "Media & Konten",
+        "skills.security": "Keamanan & Incident Response",
         "projects.label": "// yang sudah saya bangun",
         "projects.title": "Proyek",
         "badge.production": "Produksi",
@@ -733,6 +779,9 @@
         "badge.desktop": "Aplikasi Desktop",
         "badge.side": "Proyek Sampingan",
         "badge.trading": "Trading",
+        "badge.incident": "Incident Response",
+        "p0.name": "Kompromi Host Proxmox — Incident Response",
+        "p0.desc": "Menginvestigasi dan memulihkan kompromi aktif pada host virtualisasi Proxmox produksi, yang terdeteksi dari error cron rutin. Menelusuri rantai kejadian dari artefak cron yang tidak wajar hingga ke backdoor cryptomining aktif dengan koneksi C2, menemukan root cause melalui forensik log (brute-force pada panel manajemen web), serta memimpin proses containment, pembersihan, dan hardening.",
         "p1.name": "Monitoring Toner Printer",
         "p1.desc": "Monitoring suplai printer enterprise via raw SNMP UDP (tanpa dependensi eksternal). Terintegrasi dengan stack Prometheus + Grafana via SNMP Exporter. Auto-deteksi printer mono vs warna untuk 20+ perangkat.",
         "p2.name": "Self-hosted Monitoring Stack",
@@ -758,6 +807,7 @@
         "exp.b4": "Mengelola infrastruktur jaringan MikroTik dan Cisco termasuk konfigurasi VLAN, monitoring SNMP, dan inter-VLAN routing.",
         "exp.b5": "Mengotomasi pemrosesan inventaris aset IT untuk 886+ aset menggunakan Python dan Excel, menghasilkan laporan ringkasan per lantai.",
         "exp.b6": "Menyiapkan WireGuard VPN di Oracle Cloud untuk akses remote yang aman dan routing layanan self-hosted.",
+        "exp.b7": "Mengidentifikasi dan memulihkan kompromi aktif pada level host di infrastruktur virtualisasi produksi — menelusuri root cause hingga ke panel manajemen yang berhasil dibobol via brute-force, menghapus mekanisme persistence, dan menerapkan langkah hardening untuk mencegah terulang.",
         "contact.label": "// hubungi saya",
         "contact.title": "Kontak",
         "contact.desc": "Terbuka untuk peluang baru, kolaborasi, atau sekadar ngobrol soal infrastruktur dan otomasi.",
